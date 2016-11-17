@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/jmdembe/github_contrib/issues"
   },
-  "homepage": "https://github.com/jmdembe/github_contrib#readme"
+  "homepage": "https://github.com/jmdembe/github_contrib#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1"
+  }
 }
