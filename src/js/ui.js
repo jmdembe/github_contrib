@@ -6,8 +6,9 @@
     var token;
     var query;
 
-    $('input')
-        .on('submit', function findContrib () {
+    $('#search')
+        .on('submit', function findContrib (event) {
+            event.preventDefault();
             var token = $('#api-key').val();
             var query = $('#query').val();
 

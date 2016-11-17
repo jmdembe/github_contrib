@@ -15,10 +15,16 @@
             dataType: 'json',
             headers: {
                 Authorization: 'token '+ token
+            },
+            data: {
+                q: query
             }
         })
-        .then (function firstSuccess(data) {
-            // return $.ajax
+        .then(function firstSuccess(data) {
+            console.log('hello?', data);
+        })
+        .catch(function firstError(xhr) {
+            console.log('what happened?', xhr.status)
         })
     }
 })();
