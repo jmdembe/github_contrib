@@ -2,16 +2,13 @@
     'use strict';
 
     window.ghContrib = window.ghContrib || {};
-
     window.ghContrib.firstCall = firstCall;
-
-    var token;
 
     /**
      * Activates the first Ajax call
-     * @return {Promise} [description]
+     * @return {Promise} Gets to the second set of calls t
      */
-    function firstCall(token) {
+    function firstCall(token, query) {
         return $.ajax({
             url: 'https://api.github.com/search/repositories',
             method: 'GET',
@@ -19,6 +16,9 @@
             headers: {
                 Authorization: 'token '+ token
             }
+        })
+        .then (function firstSuccess(data) {
+            // return $.ajax
         })
     }
 })();
