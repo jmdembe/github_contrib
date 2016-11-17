@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/jmdembe/github_contrib#readme",
   "devDependencies": {
-    "grunt": "^1.0.1"
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0",
+    "jquery": "^3.1.1"
   }
 }
