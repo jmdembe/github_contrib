@@ -1,0 +1,19 @@
+{
+  "name": "github_contrib",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmdembe/github_contrib.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jmdembe/github_contrib/issues"
+  },
+  "homepage": "https://github.com/jmdembe/github_contrib#readme"
+}
