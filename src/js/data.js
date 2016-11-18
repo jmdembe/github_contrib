@@ -42,13 +42,9 @@
 
     function secondCall(search) {
         return $.ajax({
-            url: 'https://api.github.com/repos/:username/:reponame/commits',
+            url: 'https://api.github.com/repos/'+ search.owner.login + '/' +search.name +'/commits',
             method: 'GET',
-            dataType: 'json',
-            data: {
-              username: search.owner.login, //?username='...'
-              reponame: search.name
-            }
+            dataType: 'json'
         });
     }
 })();
