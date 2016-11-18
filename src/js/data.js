@@ -4,7 +4,7 @@
     window.ghContrib = window.ghContrib || {};
     window.ghContrib.firstCall = firstCall;
 
-    var num = num = Math.ceil(Math.random() * 19);
+ Math.ceil(Math.random() * 19);
     /**
      * Activates the first Ajax call
      * @return {Promise} Gets to the second set of calls t
@@ -21,11 +21,22 @@
                 q: query
             }
         })
-        .then(function firstSuccess(data) {
+        .done(function firstSuccess(data) {
             console.log('hello?', data);
-            function randomNumber
+
+            var search = data.items[Math.ceil(Math.random() * 29)];
+            console.log(search);
+
+            function secondCall(search) {
+                return $.ajax({
+                    
+                })
+            }
+            // use that to access a single array entry
+            // use that entry to call another fn which does another ajax call
+
         })
-        .catch(function firstError(xhr) {
+        .fail(function firstError(xhr) {
             console.log('what happened?', xhr.status)
         })
     }
