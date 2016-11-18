@@ -17,6 +17,8 @@
         })
 
     function addInfo(avatar_url,user) {
-      console.log(avatar_url, user);
+      $('#contributors')
+        $('ul')
+          .append('<li><img src='+avatar_url+'>'+ user+'</li>')
     }
 }());

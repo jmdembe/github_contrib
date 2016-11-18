@@ -38,7 +38,7 @@
             console.log('second ajax call with commits: ', result);
 
             console.log('chosen commit: '+ finalResultLength, finalResult );
-            window.ghContrib.addInfo(result.author.avatar_url, result.author.login);
+            window.ghContrib.addInfo(finalResult.author.avatar_url, finalResult.author.login);
 
         })
         .fail(function searchRepoError(xhr) {
