@@ -4,6 +4,9 @@
     window.ghContrib = window.ghContrib || {};
     window.ghContrib.searchRepo = searchRepo;
 
+    var finalResult;
+    var finalResultLength;
+
  Math.ceil(Math.random() * 19);
     /**
      * Activates the first Ajax call
@@ -22,29 +25,39 @@
             }
         })
         .then(function searchRepoSuccess(data) {
-            console.log('hello?', data);
+            console.log('First ajax call with repos:', data);
 
             var search = data.items[Math.ceil(Math.random() * 29)];
-            console.log(search);
 
-            return secondCall(search);
-            // use that to access a single array entry
-            // use that entry to call another fn which does another ajax call
-
+            return getCommit(search);
         })
-        .then(function functionName(result) {
-            console.log(result);
+        .then(function getCommitSuccess(result) {
+            finalResultLength = Math.ceil(Math.random() * 29)
+            finalResult = result[finalResultLength];
+            console.log('second ajax call with commits: ', result);
+
+            console.log('chosen commit: '+ finalResultLength, finalResult );
+
+
         })
         .fail(function searchRepoError(xhr) {
             console.log('what happened?', xhr.status)
+
         })
     }
 
-    function secondCall(search) {
+/**
+ * Upon success of the first ajax call (after a random repo is selected),
+ * this function returns a promise with 30 commits.
+ * @param  {Array} search
+ * @return {Promise}
+ */
+    function getCommit(search) {
         return $.ajax({
             url: 'https://api.github.com/repos/'+ search.owner.login + '/' +search.name +'/commits',
             method: 'GET',
             dataType: 'json'
-        });
+        })
     }
+
 })();

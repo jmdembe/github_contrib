@@ -14,4 +14,8 @@
 
             var searchRepo = window.ghContrib.searchRepo(token, query);
         })
+
+    function addInfo(avatar_url, author_name) {
+      console.log(avatar_url, author_name);
+    }
 }());
