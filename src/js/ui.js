@@ -12,6 +12,6 @@
             var token = $('#api-key').val();
             var query = $('#query').val();
 
-            var firstCall = window.ghContrib.firstCall(token, query);
+            var searchRepo = window.ghContrib.searchRepo(token, query);
         })
 }());
