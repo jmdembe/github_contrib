@@ -21,7 +21,7 @@
                 q: query
             }
         })
-        .done(function firstSuccess(data) {
+        .then(function firstSuccess(data) {
             console.log('hello?', data);
 
             var search = data.items[Math.ceil(Math.random() * 29)];
@@ -29,6 +29,15 @@
 
             function secondCall(search) {
                 return $.ajax({
+                    url: 'https://api.github.com/repos/:username/:reponame/commits',
+                    method: 'GET',
+                    dataType: 'json',
+                    data: {
+                      username: search.owner.login //?username='...'
+                      reponame: search.name
+                    }
+                })
+                .then (function secondSuccess(data) {
                     
                 })
             }
