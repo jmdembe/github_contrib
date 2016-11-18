@@ -2,6 +2,7 @@
     'use strict';
 
     window.ghContrib = window.ghContrib || {};
+    window.ghContrib.addInfo = addInfo;
 
     var token;
     var query;
@@ -15,7 +16,7 @@
             var searchRepo = window.ghContrib.searchRepo(token, query);
         })
 
-    function addInfo(avatar_url, author_name) {
-      console.log(avatar_url, author_name);
+    function addInfo(avatar_url,user) {
+      console.log(avatar_url, user);
     }
 }());

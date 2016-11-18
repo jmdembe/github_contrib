@@ -7,6 +7,7 @@
     var finalResult;
     var finalResultLength;
 
+
  Math.ceil(Math.random() * 19);
     /**
      * Activates the first Ajax call
@@ -32,12 +33,12 @@
             return getCommit(search);
         })
         .then(function getCommitSuccess(result) {
-            finalResultLength = Math.ceil(Math.random() * 29)
+            finalResultLength = Math.ceil(Math.random() * 30);
             finalResult = result[finalResultLength];
             console.log('second ajax call with commits: ', result);
 
             console.log('chosen commit: '+ finalResultLength, finalResult );
-
+            window.ghContrib.addInfo(result.author.avatar_url, result.author.login);
 
         })
         .fail(function searchRepoError(xhr) {
